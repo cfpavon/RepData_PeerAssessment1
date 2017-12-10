@@ -87,7 +87,7 @@ stepsDataMissing=stepsData%>%
 stepsData<-na.omit(stepsData)
 ```
 
-##What is mean total number of steps taken per day?
+## What is mean total number of steps taken per day?
 
 A histogram of the number of steps in the dataset is presented. The data shows that the mean total number of steps taken each day was 10766.19. In the histogram, there is a vertical line to show both mean and median. The average number of steps taken each day was between 41 and 21194. 
 
@@ -124,7 +124,7 @@ mean(sumStepsDay$steps)
 ## [1] 10766.19
 ```
 
-##What is average daily pattern?
+## What is average daily pattern?
 
 The time series plot for the average daily pattern shows that the number of steps start to pick up at around before 6:00am. Furthermore, the highest 5-minute interbval was 8:35am with around 206.2 steps.
 
@@ -161,7 +161,7 @@ with(averageDailyPattern,{plot(interval,steps,type="l",xlab="Hours",ylab="Number
 
 ![plot of chunk Average Daily Pattern 2](figure/Average Daily Pattern 2-1.png)
 
-##Imputing missing values
+## Imputing missing values
 
 
 ```r
@@ -216,7 +216,7 @@ StepsMean
 ## [1] 9705.311
 ```
 
-##Are there differences in activity patterns between weekdays and weekends?
+## Are there differences in activity patterns between weekdays and weekends?
 
 
 ```r
