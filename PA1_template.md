@@ -1,53 +1,14 @@
 ---
-title: "My Title"
-author: "Me, Inc."
+title: "Activity Monitoring Device"
+author: "Carlos Pavon"
 date: "August 4, 2015"
-output: html_document
-params:
-  title: default
 ---
 
-<style type="text/css">
-html { background-color: #d4d9de ; }
-body{ /* Normal  */
-      font-size: 16px;width:67%;text-align: center;
-      text-align: left; margin: 0px auto; 
-      background-color: white;color: black;
-       border-left: 3px solid   #f3e9fc;
-    border-right: 3px solid   #f3e9fc;  
-  }
-td {  /* Table  */
-  font-size: 8px;
-}
-h1.title {
-  font-size: 38px;
-  color: #ff981a;
-}
-h1 { /* Header 1 */
-  font-size: 30px;
-  color: #ff981a;
-}
-h2 { /* Header 2 */
-    font-size: 24px;
-  color: #4d4dff;
-}
-h3 { /* Header 3 */
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  color: DarkBlue;
-}
-code.r{ /* Code block */
-    font-size: 12px;line-height: 12px;
-}
-pre { /* Code block - determines code spacing between lines */
-    font-size: 12px;
-}
-</style>
+
 
 
 Activity Monitoring Device
 ==========================
-
 
 ### Carlos Pavón
 ### December 9, 2017
@@ -230,3 +191,7 @@ xyplot(steps~interval|typeDay,averageTypeDay, main="",ylab="Number of steps",
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
 
 There is a clear differences in the types of pattern from the weekdays and weekend. First, the weekdays' highest peak which higher that the one of the weekend which signals a more concentrated at physical activity maybe due to commuting to work. Second, the weekend present a more gradual curve of physical activity throughout the day. This could have being expected to due free time and ability to  schedule different plans. Third, the net number of steps during the weekend was higher than the weekday. This is also related to leisure activities and recreation. Finally, this dataset provided great insight into the physical activity of subject being monitored, the data can be use to improve the wellness and well being of the persons involved. The monitoring devices are a great aid into the process of achieving a healthier lifestyle.
+```
+```
+```
+
