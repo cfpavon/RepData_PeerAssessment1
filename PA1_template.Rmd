@@ -1,11 +1,4 @@
 
-```{r }
----
-title: "Activity Monitoring Device"
-author: "Carlos Pavon"
-date: "August 4, 2015"
----
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -76,7 +69,7 @@ mean(sumStepsDay$steps)
 
 The time series plot for the average daily pattern shows that the number of steps start to pick up at around before 6:00am. Furthermore, the highest 5-minute interbval was 8:35am with around 206.2 steps.
 
-```{r Average Daily Pattern}
+```{r Average-Pattern}
 #Calculate Daily Pattern
 averageDailyPattern=stepsData%>%group_by(interval)%>%summarise(steps=mean(steps))%>%
   ungroup()
@@ -87,7 +80,7 @@ maximumSteps
 
 The number of steps reach the the highest number of steps are at around 8:35am. Then after 9:00am they come down somewhat but there are other smaller peaks during the rest of the day. At the end of the day the physical activity is almost none after 8:00 pm. 
 
-```{r Average Daily Pattern 2}
+```{r Average-Pattern1}
 #Set up the ticks and labels
 xTick=seq(0, 2359, by = 300)
 xLabels=format(strptime(sprintf("%04d", xTick), format = "%H%M"),format="%H:%M")
@@ -107,7 +100,7 @@ numberMissing
 
 There were 2304 missing values for the number of steps. The strategy used to fill the missing observartions was to calculate the per weekday for each time interval. This strategy was based on the idea that different day of the week could generate certain pattern on the number of steps. As a result, this calculation gave 252 median values for each day of the week.   
 
-```{r}
+```{r weekdays}
 averageStepsWeekday=stepsData%>%group_by(interval,weekday)%>%  summarise(steps=round(median(steps),0))%>%ungroup()
 stepsDataFilled=left_join(stepsDataMissing,averageStepsWeekday,
                           by=c("interval","weekday"))
@@ -116,7 +109,7 @@ stepsDataComplete=bind_rows(stepsData,stepsDataFilled)%>%  mutate(typeDay=factor
 
 The result from the imputation strategy were joined with the missing observations, and all combined into a complete cases dataset which was use for the next steps.
 
-```{r}
+```{r hist1}
 sumStepsDayC=stepsDataComplete%>%group_by(date)%>%summarise(steps=sum(steps))%>%
   ungroup()
 stepsMedian=median(sumStepsDayC$steps)
@@ -134,7 +127,7 @@ StepsMean
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-```{r}
+```{r lattice}
 averageTypeDay=group_by(stepsDataComplete,interval,typeDay)%>%
   summarise(steps=mean(steps))%>%ungroup()
 xyplot(steps~interval|typeDay,averageTypeDay, main="",ylab="Number of steps",  
@@ -143,6 +136,11 @@ xyplot(steps~interval|typeDay,averageTypeDay, main="",ylab="Number of steps",
 ```
 
 There is a clear differences in the types of pattern from the weekdays and weekend. First, the weekdays' highest peak which higher that the one of the weekend which signals a more concentrated at physical activity maybe due to commuting to work. Second, the weekend present a more gradual curve of physical activity throughout the day. This could have being expected to due free time and ability to  schedule different plans. Third, the net number of steps during the weekend was higher than the weekday. This is also related to leisure activities and recreation. Finally, this dataset provided great insight into the physical activity of subject being monitored, the data can be use to improve the wellness and well being of the persons involved. The monitoring devices are a great aid into the process of achieving a healthier lifestyle.
+```
+```
+```
+```
+```
 ```
 ```
 ```

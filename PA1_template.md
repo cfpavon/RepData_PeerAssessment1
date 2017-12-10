@@ -1,8 +1,3 @@
----
-title: "Activity Monitoring Device"
-author: "Carlos Pavon"
-date: "August 4, 2015"
----
 
 
 
@@ -120,7 +115,7 @@ with(averageDailyPattern,{plot(interval,steps,type="l",xlab="Hours",ylab="Number
   axis(1,at=xTick,labels=xLabels, las=1)})
 ```
 
-![plot of chunk Average Daily Pattern 2](figure/Average Daily Pattern 2-1.png)
+![plot of chunk Average-Pattern1](figure/Average-Pattern1-1.png)
 
 ## Imputing missing values
 
@@ -157,7 +152,7 @@ with(sumStepsDayC,{hist(steps,col="purple",main="Histogram",xlab="Number of step
   abline(v=median(steps),col="blue",lwd=2)})
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![plot of chunk hist1](figure/hist1-1.png)
 
 This histogram with the filled values is similar to the one of the complete cases. Both median and mean for the filled data were smaller in value than the one of the complete cases. Their values are presented here: 
 
@@ -188,9 +183,14 @@ xyplot(steps~interval|typeDay,averageTypeDay, main="",ylab="Number of steps",
        scales=list(x=list(at=xTick, labels=xLabels)), layout=c(1,2))
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
+![plot of chunk lattice](figure/lattice-1.png)
 
 There is a clear differences in the types of pattern from the weekdays and weekend. First, the weekdays' highest peak which higher that the one of the weekend which signals a more concentrated at physical activity maybe due to commuting to work. Second, the weekend present a more gradual curve of physical activity throughout the day. This could have being expected to due free time and ability to  schedule different plans. Third, the net number of steps during the weekend was higher than the weekday. This is also related to leisure activities and recreation. Finally, this dataset provided great insight into the physical activity of subject being monitored, the data can be use to improve the wellness and well being of the persons involved. The monitoring devices are a great aid into the process of achieving a healthier lifestyle.
+```
+```
+```
+```
+```
 ```
 ```
 ```
